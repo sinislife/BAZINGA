@@ -12,7 +12,7 @@ public class Usuario {
 	private String cpf;
 	private String usuario;
 	private String jogos;
-	private String senha;
+	private String descricao;
 	private Date dataCriacao;
 	
 	public Usuario() {
@@ -24,7 +24,7 @@ public class Usuario {
 		this.cpf = cpf;
 		this.usuario = usuario;
 		this.jogos = jogos;
-		this.senha = senha;
+		this.descricao = senha;
 		this.dataCriacao = dataCriacao;
 	}
 
@@ -57,11 +57,11 @@ public class Usuario {
 
 	@DynamoDBAttribute
 	public String getSenha() {
-		return senha;
+		return descricao;
 	}
 
 	public void setSenha(String senha) {
-		this.senha = senha;
+		this.descricao = senha;
 	}
 
 	@DynamoDBAttribute
@@ -80,7 +80,7 @@ public class Usuario {
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
 		result = prime * result + ((dataCriacao == null) ? 0 : dataCriacao.hashCode());
 		result = prime * result + ((jogos == null) ? 0 : jogos.hashCode());
-		result = prime * result + ((senha == null) ? 0 : senha.hashCode());
+		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
 		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
 		return result;
 	}
@@ -109,10 +109,10 @@ public class Usuario {
 				return false;
 		} else if (!jogos.equals(other.jogos))
 			return false;
-		if (senha == null) {
-			if (other.senha != null)
+		if (descricao == null) {
+			if (other.descricao != null)
 				return false;
-		} else if (!senha.equals(other.senha))
+		} else if (!descricao.equals(other.descricao))
 			return false;
 		if (usuario == null) {
 			if (other.usuario != null)
@@ -124,7 +124,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [cpf=" + cpf + ", usuario=" + usuario + ", jogos=" + jogos + ", senha=" + senha
+		return "Usuario [cpf=" + cpf + ", usuario=" + usuario + ", jogos=" + jogos + ", descricao=" + descricao
 				+ ", dataCriacao=" + dataCriacao + "]";
 	}
 	
